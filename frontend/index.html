@@ -7,10 +7,53 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Gold Tracking Project</h1>
+  <div class="container">
+    <h1>Gold Tracking Dashboard</h1>
 
-  <div id="gold-holdings"></div>
-  <div id="total-value"></div>
+    <section class="price-section">
+      <h2>Current Gold Price (₹/gram)</h2>
+      <div id="live-price">Loading…</div>
+    </section>
+
+    <section class="form-section">
+      <h2>Record a Transaction</h2>
+      <form id="transaction-form">
+        <label>
+          Item: <input type="text" id="item-name" required placeholder="e.g., rings">
+        </label>
+        <label>
+          Weight (g): <input type="number" id="item-weight" required min="0.1" step="0.1">
+        </label>
+        <label>
+          Type:
+          <select id="transaction-type">
+            <option value="purchase">Purchase</option>
+            <option value="sale">Sale</option>
+          </select>
+        </label>
+        <button type="submit">Add Transaction</button>
+      </form>
+    </section>
+
+    <section id="holdings-section">
+      <h2>Your Holdings</h2>
+      <table id="holdings-table">
+        <thead>
+          <tr><th>Item</th><th>Weight (g)</th><th>Value (₹)</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section id="total-value-section">
+      <h2>Total Value</h2>
+      <div id="total-value">₹0</div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Gold Tracking Project</p>
+    </footer>
+  </div>
 
   <script src="script.js"></script>
 </body>
